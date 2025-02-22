@@ -1,7 +1,7 @@
 from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
 from crewai_tools import  FileWriterTool, SerperDevTool
-from .tools.custom_tool import BookingLinksTool  # Import the new tool
+# from .tools.custom_tool import BookingLinksTool  # Import the new tool
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -74,27 +74,38 @@ class TravelaiOpenai():
 			verbose=True
 		)
   
-  
-
 	@agent
 	def booking_services_agent(self) -> Agent:
-		booking_links = {
-			'flights': 'https://trip.tp.st/nu9J4ned',  # Trip.com for flights
-			'hotels': 'https://trip.tp.st/nu9J4ned',   # Trip.com for hotels
-			'activities': 'https://tiqets.tp.st/8gQeAuD3',  # Tiqets for attractions
-			'transfers': [
-				'https://kiwitaxi.tp.st/nZ8VaGme',     # Kiwitaxi for transfers
-				'https://gettransfer.tp.st/f23S4ViC'   # GetTransfer alternative
-			]
-		}
-		
-		booking_tool = BookingLinksTool.create(links=booking_links)
-		
 		return Agent(
 			config=self.agents_config['booking_services_agent'],
-			tools=[SerperDevTool(), booking_tool],
+			tools=[],
 			verbose=True
 		)
+
+  
+  
+
+	# @agent
+	# def booking_services_agent(self) -> Agent:
+	# 	booking_links = {
+	# 		'flights': 'https://trip.tp.st/nu9J4ned',  # Trip.com for flights
+	# 		'hotels': 'https://trip.tp.st/nu9J4ned',   # Trip.com for hotels
+	# 		'activities': 'https://tiqets.tp.st/8gQeAuD3',  # Tiqets for attractions
+	# 		'transfers': [
+	# 			'https://kiwitaxi.tp.st/nZ8VaGme',     # Kiwitaxi for transfers
+	# 			'https://gettransfer.tp.st/f23S4ViC'   # GetTransfer alternative
+	# 		]
+	# 	}
+		
+	# 	booking_tool = BookingLinksTool.create(links=booking_links)
+		
+	# 	return Agent(
+	# 		config=self.agents_config['booking_services_agent'],
+	# 		tools=[SerperDevTool(), booking_tool],
+	# 		verbose=True
+	# 	)
+  
+  
 
 	@agent
 	def file_writer(self) -> Agent:

@@ -1,0 +1,153 @@
+find_travel_locations:
+  description: >
+    Identify top travel destinations near {destination_location} that align with {interests}.Also recommend the best time to visit the destination and recommend other best places to visit other than {interests}.
+  expected_output: >
+    A curated list of travel locations with descriptions, distances from {destination_location}, and user ratings.
+  agent: travel_agent
+
+find_hotels:
+  description: >
+    Find {accommodation_type} options in {destination_location} that match {budget_per_person} budget.
+    for {number_of_travelers} travelers within the allocated accommodation budget.
+  expected_output: >
+    A list of recommended accommodations with pricing, ratings, amenities, and booking information.
+  agent: travel_agent
+
+calculate_trip_budget:
+  description: >
+    Estimate total travel expenses based on {budget_per_person} considering {number_of_travelers} travelers,
+    {accommodation_type} level accommodation, and {preferred_travel_mode} transportation.
+  expected_output: >
+    A detailed breakdown of travel costs including per-person expenses, daily allowances, and budget allocation for different aspects of the trip.
+  agent: budget_calculator_agent
+
+provide_weather_updates:
+  description: >
+    Fetch the latest weather forecast for {destination_location} during {travel_date} - {travel_duration}.
+  expected_output: >
+    A weather summary including expected temperatures, precipitation, and general conditions.
+  agent: weather_agent
+
+find_local_attractions:
+  description: >
+    Research and recommend the top attractions in {destination_location} based on {interests}.
+  expected_output: >
+    A list of must-visit attractions with descriptions, ticket prices, and tips.
+  agent: attraction_finder_agent
+
+provide_safety_advisories:
+  description: >
+    Offer safety tips and emergency contact details for {destination_location}.
+  expected_output: >
+    A safety guide that includes health precautions, travel restrictions, and emergency contacts.
+  agent: safety_advisor_agent
+
+recommend_food_options:
+  description: >
+    Suggest restaurants and local food experiences in {destination_location} based on {meal_preferences}
+    and {dietary_restrictions}, considering {budget_per_person} budget allocation for food.
+  expected_output: >
+    A curated list of restaurants with pricing, specialties, dietary information, and local cuisine recommendations.
+  agent: food_recommendation_agent
+
+generate_travel_itinerary:
+  description: >
+    Create a detailed day-wise travel itinerary based on {interests} preference, including {preferred_travel_mode} transportation,
+    {accommodation_type} stays, and activities matching {interests}.Create a a better visulaization if possible like traveling to one position to another.
+  expected_output: >
+    A complete itinerary with daily schedules, recommended activities, and travel logistics optimized for the chosen travel style.
+  agent: travel_agent
+
+recommend_booking_services:
+  description: >
+    Provide relevant booking links for {preferred_travel_mode}, {accommodation_type}, activities, and transfers
+    that match the travel requirements and budget constraints.
+  expected_output: >
+    A structured section in the final document containing:
+    - Flight Booking Options:
+      * Direct link to Trip.com flight search: https://trip.tp.st/nu9J4ned
+      * Recommended flight routes and estimated costs
+    - Accommodation Booking:
+      * Direct link to Trip.com hotel search: https://trip.tp.st/nu9J4ned
+      * Suggested properties matching {accommodation_preference}
+    - Activities and Attractions:
+      * Direct link to Tiqets booking platform: https://tiqets.tp.st/8gQeAuD3
+      * Recommended tours and experiences
+    - Transfer Services:
+      * Kiwitaxi for reliable airport transfers: https://kiwitaxi.tp.st/nZ8VaGme
+      * GetTransfer for flexible transport options: https://gettransfer.tp.st/f23S4ViC
+    Each section will include:
+      * Direct booking links
+      * Price estimates
+      * Service highlights
+      * Booking tips
+  agent: booking_services_agent
+
+file_writer_task:
+  description: >
+    Compile all travel details into a structured file, including detailed trip information and recommendations.
+  expected_output: >
+    A well-formatted document (PDF/TXT/Markdown) containing:
+    - Basic Details:
+      * Source: {source_location}
+      * Destination: {destination_location}
+      * Travel Date: {travel_date}
+      * Duration: {travel_duration}
+    - Group & Budget:
+      * Number of Travelers: {number_of_travelers}
+      * Companion Type: {travel_companions_type}
+      * Total Budget: {total_budget} multiply by {number_of_travelers}
+    - Preferences:
+      * Travel Mode: {preferred_travel_mode}
+      * Accommodation: {accommodation_type}
+    - Food & Dietary:
+      * Meal Preferences: {meal_preferences}
+      * Dietary Restrictions: {dietary_restrictions}
+    - Interests & Requirements:
+      * Interests: {interests}
+      * Accessibility Needs: {accessibility_needs}
+      * Special Requests: {special_requests}
+    - Detailed Sections:
+      * Weather Updates
+      * Local Attractions wih ditance from the {destination_location}
+      * Safety Advisories & Emergency Contacts
+      * Daily Itinerary
+      * Budget Breakdown
+      * Recommended Restaurants
+      * Important Tips
+    - Booking Services:
+      * Flights & Hotels (Trip.com): https://trip.tp.st/nu9J4ned
+      * Activities & Attractions (Tiqets): https://tiqets.tp.st/8gQeAuD3
+      * Airport Transfers:
+        - Kiwitaxi: https://kiwitaxi.tp.st/nZ8VaGme
+        - GetTransfer: https://gettransfer.tp.st/f23S4ViC
+    Output Location: ./travel_plan/{destination_location}_{date}_travel_plan.md
+  agent: file_writer
+
+generate_pdf_report:
+  description: >
+    Generate a professional PDF report from the structured travel itinerary data following the TravelItinerarySchema format.
+  expected_output: >
+    A professionally formatted PDF document containing:
+    - Cover page with trip overview
+    - Table of contents
+    - Detailed sections:
+      * Trip Summary
+      * Travel Group Details
+      * Budget Overview
+      * Travel Preferences
+      * Daily Itinerary
+      * Weather Forecast
+      * Attractions and Activities
+      * Safety Information
+      * Restaurant Recommendations
+      * Budget Breakdown
+      * Important Tips
+    - Booking Links and Services:
+      * Recommended booking platforms
+      * Direct booking links for all services
+      * Special offers and deals
+      * Booking tips and guidelines
+    Output Location: ./travel_plan/{destination_location}_{date}_travel_plan.pdf
+  agent: pdf_generator_agent
+

@@ -20,19 +20,19 @@ def run():
     inputs = {
         'source_location': 'pune',
         'destination_location': 'jaipur',
-        'travel_date': '2025-03-15',
-        'travel_duration': '5 days',
-        'number_of_travelers': '2',
-        'travel_companions_type': 'Couple',
-        'budget_per_person': '15000',
-        'preferred_travel_mode': 'Flight',
-        'accommodation_type': 'Hotel',
-        'meal_preferences': 'Non-Veg',
-        'interests': 'Nature',
-        'accessibility_needs': 'Wheelchair accessible',
-        'dietary_restrictions': 'Gluten-free',
-        'special_requests': 'Early check-in and city view room',
-        'date': datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
+        # 'travel_date': '2025-03-15',
+        # 'travel_duration': '5 days',
+        # 'number_of_travelers': '2',
+        # 'travel_companions_type': 'Couple',
+        # 'budget_per_person': '15000',
+        # 'preferred_travel_mode': 'Flight',
+        # 'accommodation_type': 'Hotel',
+        # 'meal_preferences': 'Non-Veg',
+        # 'interests': 'Nature',
+        # 'accessibility_needs': 'Wheelchair accessible',
+        # 'dietary_restrictions': 'Gluten-free',
+        # 'special_requests': 'Early check-in and city view room',
+        # 'date': datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
     }
     
     try:

@@ -18,8 +18,8 @@ def run():
     Run the crew.
     """
     inputs = {
-        'source_location': 'pune',
-        'destination_location': 'jaipur',
+        'topic': 'pune',
+        'date': 'jaipur',
         # 'travel_date': '2025-03-15',
         # 'travel_duration': '5 days',
         # 'number_of_travelers': '2',

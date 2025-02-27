@@ -115,13 +115,13 @@ class TravelaiOpenai():
 			verbose=True
 		) 
 
-	@agent
-	def pdf_generator_agent(self) -> Agent:
-		return Agent(
-			config=self.agents_config['pdf_generator_agent'],
-			tools=[FileWriterTool()],
-			verbose=True
-		)
+	# @agent
+	# def pdf_generator_agent(self) -> Agent:
+	# 	return Agent(
+	# 		config=self.agents_config['pdf_generator_agent'],
+	# 		tools=[FileWriterTool()],
+	# 		verbose=True
+	# 	)
   
 	@task
 	def find_travel_locations(self) -> Task:
@@ -183,11 +183,11 @@ class TravelaiOpenai():
 			config=self.tasks_config['file_writer_task']
 		)
 
-	@task
-	def generate_pdf_report(self) -> Task:
-		return Task(
-			config=self.tasks_config['generate_pdf_report']
-		)
+	# @task
+	# def generate_pdf_report(self) -> Task:
+	# 	return Task(
+	# 		config=self.tasks_config['generate_pdf_report']
+	# 	)
 
 	@crew
 	def crew(self) -> Crew:

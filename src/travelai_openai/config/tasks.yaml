@@ -85,9 +85,9 @@ recommend_booking_services:
 
 file_writer_task:
   description: >
-    Compile all travel details into a structured file, including detailed trip information and recommendations.
+    Compile all travel details into a structured text, including detailed trip information and recommendations.
   expected_output: >
-    A well-formatted document (PDF/TXT/Markdown) containing:
+    A well-formatted document (TXT/Markdown) containing:
     - Basic Details:
       * Source: {source_location}
       * Destination: {destination_location}
@@ -121,33 +121,4 @@ file_writer_task:
       * Airport Transfers:
         - Kiwitaxi: https://kiwitaxi.tp.st/nZ8VaGme
         - GetTransfer: https://gettransfer.tp.st/f23S4ViC
-    Output Location: ./travel_plan/{destination_location}_{date}_travel_plan.md
   agent: file_writer
-
-# generate_pdf_report:
-#   description: >
-#     Generate a professional PDF report from the structured travel itinerary data following the TravelItinerarySchema format.
-#   expected_output: >
-#     A professionally formatted PDF document containing:
-#     - Cover page with trip overview
-#     - Table of contents
-#     - Detailed sections:
-#       * Trip Summary
-#       * Travel Group Details
-#       * Budget Overview
-#       * Travel Preferences
-#       * Daily Itinerary
-#       * Weather Forecast
-#       * Attractions and Activities
-#       * Safety Information
-#       * Restaurant Recommendations
-#       * Budget Breakdown
-#       * Important Tips
-#     - Booking Links and Services:
-#       * Recommended booking platforms
-#       * Direct booking links for all services
-#       * Special offers and deals
-#       * Booking tips and guidelines
-#     Output Location: ./travel_plan/{destination_location}_{date}_travel_plan.pdf
-#   agent: pdf_generator_agent
-

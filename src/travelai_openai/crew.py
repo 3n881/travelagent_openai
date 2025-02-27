@@ -82,46 +82,13 @@ class TravelaiOpenai():
 			verbose=True
 		)
 
-  
-  
-
-	# @agent
-	# def booking_services_agent(self) -> Agent:
-	# 	booking_links = {
-	# 		'flights': 'https://trip.tp.st/nu9J4ned',  # Trip.com for flights
-	# 		'hotels': 'https://trip.tp.st/nu9J4ned',   # Trip.com for hotels
-	# 		'activities': 'https://tiqets.tp.st/8gQeAuD3',  # Tiqets for attractions
-	# 		'transfers': [
-	# 			'https://kiwitaxi.tp.st/nZ8VaGme',     # Kiwitaxi for transfers
-	# 			'https://gettransfer.tp.st/f23S4ViC'   # GetTransfer alternative
-	# 		]
-	# 	}
-		
-	# 	booking_tool = BookingLinksTool.create(links=booking_links)
-		
-	# 	return Agent(
-	# 		config=self.agents_config['booking_services_agent'],
-	# 		tools=[SerperDevTool(), booking_tool],
-	# 		verbose=True
-	# 	)
-  
-  
-
 	@agent
 	def file_writer(self) -> Agent:
 		return Agent(
 			config=self.agents_config['file_writer'],
-  		    tools=[FileWriterTool()],
 			verbose=True
 		) 
 
-	# @agent
-	# def pdf_generator_agent(self) -> Agent:
-	# 	return Agent(
-	# 		config=self.agents_config['pdf_generator_agent'],
-	# 		tools=[FileWriterTool()],
-	# 		verbose=True
-	# 	)
   
 	@task
 	def find_travel_locations(self) -> Task:
@@ -183,11 +150,6 @@ class TravelaiOpenai():
 			config=self.tasks_config['file_writer_task']
 		)
 
-	# @task
-	# def generate_pdf_report(self) -> Task:
-	# 	return Task(
-	# 		config=self.tasks_config['generate_pdf_report']
-	# 	)
 
 	@crew
 	def crew(self) -> Crew:

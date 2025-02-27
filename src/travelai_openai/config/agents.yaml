@@ -64,19 +64,9 @@ booking_services_agent:
 
 file_writer:
   role: >
-    Travel Plan Documentation Expert
+    Travel Plan Creator Expert
   goal: >
-    Generate a structured and well-formatted travel plan document covering all essential details, including itinerary, budget, safety guidelines, and local attractions.
+    Generate a structured and well-formatted travel plan text covering all essential details, including itinerary, budget, safety guidelines, and local attractions.
   backstory: >
     You are a documentation specialist skilled in compiling detailed travel information.
     You ensure that the finalized travel plan, including accommodations, food preferences, transportation, and safety advisories, is saved in a well-structured format.
-
-# pdf_generator_agent:
-#   role: >
-#     PDF Report Generation Specialist
-#   goal: >
-#     Generate professional PDF reports from structured travel itinerary data using standardized templates.
-#   backstory: >
-#     You are an expert in creating well-formatted PDF documents from structured data.
-#     You ensure that all travel information is presented in a clear, professional, and easily readable format
-#     with proper sections, formatting, and styling.

@@ -124,30 +124,30 @@ file_writer_task:
     Output Location: ./travel_plan/{destination_location}_{date}_travel_plan.md
   agent: file_writer
 
-generate_pdf_report:
-  description: >
-    Generate a professional PDF report from the structured travel itinerary data following the TravelItinerarySchema format.
-  expected_output: >
-    A professionally formatted PDF document containing:
-    - Cover page with trip overview
-    - Table of contents
-    - Detailed sections:
-      * Trip Summary
-      * Travel Group Details
-      * Budget Overview
-      * Travel Preferences
-      * Daily Itinerary
-      * Weather Forecast
-      * Attractions and Activities
-      * Safety Information
-      * Restaurant Recommendations
-      * Budget Breakdown
-      * Important Tips
-    - Booking Links and Services:
-      * Recommended booking platforms
-      * Direct booking links for all services
-      * Special offers and deals
-      * Booking tips and guidelines
-    Output Location: ./travel_plan/{destination_location}_{date}_travel_plan.pdf
-  agent: pdf_generator_agent
+# generate_pdf_report:
+#   description: >
+#     Generate a professional PDF report from the structured travel itinerary data following the TravelItinerarySchema format.
+#   expected_output: >
+#     A professionally formatted PDF document containing:
+#     - Cover page with trip overview
+#     - Table of contents
+#     - Detailed sections:
+#       * Trip Summary
+#       * Travel Group Details
+#       * Budget Overview
+#       * Travel Preferences
+#       * Daily Itinerary
+#       * Weather Forecast
+#       * Attractions and Activities
+#       * Safety Information
+#       * Restaurant Recommendations
+#       * Budget Breakdown
+#       * Important Tips
+#     - Booking Links and Services:
+#       * Recommended booking platforms
+#       * Direct booking links for all services
+#       * Special offers and deals
+#       * Booking tips and guidelines
+#     Output Location: ./travel_plan/{destination_location}_{date}_travel_plan.pdf
+#   agent: pdf_generator_agent
 
